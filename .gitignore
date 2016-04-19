@@ -21,6 +21,8 @@ node_modules)
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
+webpack.config-compiled.js
+webpack.config-compiled.js.map
 
 # Gradle:
 .idea/gradle.xml
