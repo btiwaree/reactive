@@ -1,0 +1,25 @@
+{
+  "name": "egghead",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "react": "^15.0.1",
+    "react-bootstrap": "^0.29.0",
+    "react-dom": "^15.0.1",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "img-loader": "^1.2.2",
+    "style-loader": "^0.13.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC"
+}
