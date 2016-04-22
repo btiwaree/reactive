@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import {Header, Footer, Card, Parent} from './index';
 
-var style = require('../css/style.css');
+var styles = require('../css/style.css');
 
 class App extends React.Component {
 
