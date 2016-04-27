@@ -5,29 +5,36 @@ import {Header, Footer, Card, Parent} from './index';
 
 var styles = require('../css/style.css');
 
-class App extends React.Component {
+var App = React.createClass({
 
-    constructor() {
-        super();
-    }
+    getInitialState: function() {
+        return {
+            filterText: ''
+        };
+    },
 
-    render() {
+    handleInput: function(filterText){
+      this.setState({
+          filterText: filterText
+      })
+    },
+
+    render : function() {
 
         return (
             <div>
-                <Header />
-                <Parent>
+                <Header filterText={this.state.filterText} onUserInput={this.handleInput} />
 
-                    {this.props.cards.map(function(card) {
-                        return <Card key={card.name} name={card.name} img={card.source}>{card.name}</Card>;
-                    })}
+                {/**
+                Calling Parent with cards as prop.
+                 **/}
+                <Parent cards={this.props.cards} filterText={this.state.filterText} />
 
-                </Parent>
                 <Footer />
             </div>
         )
     }
-}
+});
 
 
 let cards = [

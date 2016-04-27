@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import Card from './Card';
 
 /* Wrapper for the cards
  * with props.children
@@ -20,7 +21,13 @@ var Parent = React.createClass({
                             </div>
 
                             <ul>
-                                {this.props.children}
+                                {this.props.cards.map(function(card) {
+                                    if (card.name.indexOf(this.props.filterText) === -1){
+                                        return;
+                                    }
+                                    return <Card key={card.name} name={card.name} img={card.source}>{card.name}</Card>;
+                                }.bind(this))}
+
                             </ul>
                         </div>
                     </div>

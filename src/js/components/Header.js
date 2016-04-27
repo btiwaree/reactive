@@ -13,11 +13,12 @@ var Header = React.createClass({
         };
     },
 
-    handleUserInput: function(query) {
-        this.setState({
-            query: query
-        });
+    handleChange: function() {
+        this.props.onUserInput(
+            this.refs.filterTextInput.value
+        );
     },
+
 
     render: function () {
         return (
@@ -46,8 +47,8 @@ var Header = React.createClass({
                             <form method="GET">
                                 <label >
                                     <i className={'search-icon'}/>
-                                    <input type="text" placeholder="What logo are you looking for?" name="q"
-                                           onUserInput={this.handleUserInput} className={'search-input'} />
+                                    <input type="text" placeholder="What logo are you looking for?" name="q" ref="filterTextInput"
+                                           value={this.props.filterText} onChange={this.handleChange} className={'search-input'} />
                                 </label>
                             </form>
                         </div>
