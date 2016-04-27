@@ -11,7 +11,7 @@ import React from 'react';
  */
 var Card = React.createClass({
     getInitialState(){
-        return {data: 0}
+        return {data: ''}
     },
     render: function () {
         return (

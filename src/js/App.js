@@ -12,26 +12,15 @@ class App extends React.Component {
     }
 
     render() {
-
-        let my_cards = {Facebook:"/src/img/fb.svg",
-                            Twitter:"/src/img/Twitter.svg",
-                            Reddit:"/src/img/fb.svg",
-                            Imgur:"/src/img/Twitter.svg",
-                            Slack:"/src/img/fb.svg",
-                            D:"/src/img/Twitter.svg",
-                            E:"/src/img/fb.svg",
-                            F:"/src/img/Twitter.svg",
-                            G:"/src/img/fb.svg",
-                            H:"/src/img/Twitter.svg"};
-
+        
         return (
             <div>
                 <Header />
                 <Parent>
 
-                     {Object.keys(my_cards).map(function(value){
-                     return <Card  key={value} name={ value} img={my_cards[value]} />
-                     })}
+                    {this.props.product.map(function(col) {
+                        return <Card key={col.name} name={col.name} img={col.source}>{col.name}</Card>;
+                    })}
 
                 </Parent>
                 <Footer />
@@ -40,4 +29,19 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+
+let card = [
+    {name: "Facebook", source: "/src/img/fb.svg"},
+    {name: "Twitter", source: "/src/img/Twitter.svg"},
+    {name: "Imgur", source: "/src/img/Imgur.svg"},
+    {name: "Slack", source: "/src/img/slack.svg"},
+    {name: "Microsoft", source: "/src/img/microsoft.svg"},
+    {name: "Amazon", source: "/src/img/Amazon.svg"},
+    {name: "trivago", source: "/src/img/fb.svg"},
+    {name: "LinkedIn", source: "/src/img/linkedin.svg"},
+    {name: "JavaScript", source: "/src/img/javascript.svg"},
+    {name: "React", source: "/src/img/react.svg"}
+
+];
+
+ReactDOM.render(<App cards={card} />, document.getElementById('app'));
