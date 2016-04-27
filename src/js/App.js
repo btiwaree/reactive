@@ -12,14 +12,14 @@ class App extends React.Component {
     }
 
     render() {
-        
+
         return (
             <div>
                 <Header />
                 <Parent>
 
-                    {this.props.product.map(function(col) {
-                        return <Card key={col.name} name={col.name} img={col.source}>{col.name}</Card>;
+                    {this.props.cards.map(function(card) {
+                        return <Card key={card.name} name={card.name} img={card.source}>{card.name}</Card>;
                     })}
 
                 </Parent>
@@ -30,7 +30,7 @@ class App extends React.Component {
 }
 
 
-let card = [
+let cards = [
     {name: "Facebook", source: "/src/img/fb.svg"},
     {name: "Twitter", source: "/src/img/Twitter.svg"},
     {name: "Imgur", source: "/src/img/Imgur.svg"},
@@ -44,4 +44,4 @@ let card = [
 
 ];
 
-ReactDOM.render(<App cards={card} />, document.getElementById('app'));
+ReactDOM.render(<App cards={cards} />, document.getElementById('app'));
